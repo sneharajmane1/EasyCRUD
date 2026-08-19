@@ -17,6 +17,18 @@ pipeline {
                 }
             }
         }
+        
+        stage('SonarQube Analysis') {
+            steps {
+                dir('backend') {
+                    withSonarQubeEnv('sonarqube') {
+                        sh './mvnw sonar:sonar -DskipTests'
+                    }
+                }
+            }
+        }
 
+    }
+}               
     }
 }
