@@ -17,7 +17,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('SonarQube Analysis') {
             steps {
                 dir('backend') {
@@ -27,8 +27,5 @@ pipeline {
                 }
             }
         }
-
-    }
-}               
     }
 }
